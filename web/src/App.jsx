@@ -37,7 +37,7 @@ function App() {
           <div className="topbar-left">
             <div className="brand-stack">
               <NavLink to="/" end className="brand">
-                OSbioinformaticstics
+                OSbioinformatics
               </NavLink>
               <p className="brand-tagline">Discover open resources for bioengineering and beyond</p>
             </div>
