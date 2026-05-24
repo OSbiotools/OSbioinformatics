@@ -2159,14 +2159,37 @@ h3,
   gap: var(--space-4);
 }
 
+.home-categories-section {
+  margin-top: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.home-section-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-3);
+}
+
+.home-section-title-row h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--text);
+  font-family: var(--font-display);
+}
+
 .category-panel {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: linear-gradient(180deg, #ffffff 0%, #f7f3ec 100%);
   box-shadow: var(--shadow-sm);
-  padding: var(--space-4);
-  display: grid;
-  gap: var(--space-3);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .category-panel-head {
@@ -2174,26 +2197,65 @@ h3,
   justify-content: space-between;
   gap: var(--space-2);
   align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-3);
 }
 
 .category-panel-head h2 {
   margin: 0;
-  font-size: 1.06rem;
+  font-size: 1.15rem;
+  color: var(--brand);
 }
 
 .category-panel-head span {
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   color: var(--muted);
-  text-transform: none;
-  letter-spacing: 0.03em;
+  font-weight: 500;
 }
 
 .category-panel-list {
+  flex: 1;
   margin: 0;
   padding: 0;
   list-style: none;
-  display: grid;
-  gap: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.category-panel-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.category-panel-list a {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.category-panel-list a:hover {
+  color: var(--accent);
+}
+
+.category-panel-list p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category-panel > .inline-link {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .category-panel-list li {

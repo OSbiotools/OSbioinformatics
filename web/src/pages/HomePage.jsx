@@ -99,31 +99,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="catalog-section-grid" aria-label="Browse by category">
-        {categoryGroups.map(([category, resources]) => (
-          <article key={category} className="category-panel">
-            <header className="category-panel-head">
-              <h2>{category}</h2>
-              <span>{resources.length} listed</span>
-            </header>
+      <section className="home-categories-section" aria-label="Browse by category">
+        <header className="home-section-title-row">
+          <h2>Browse by category</h2>
+          <Link to="/catalog" className="inline-link">View all resources</Link>
+        </header>
+        <div className="catalog-section-grid">
+          {categoryGroups.map(([category, resources]) => (
+            <article key={category} className="category-panel">
+              <header className="category-panel-head">
+                <h2>{category}</h2>
+                <span>{resources.length} listed</span>
+              </header>
 
-            <ul className="category-panel-list">
-              {resources.slice(0, 4).map((resource) => (
-                <li key={resource.slug}>
-                  <Link to={`/resource/${resource.slug}`}>{resource.title}</Link>
-                  <p>{resource.description}</p>
-                </li>
-              ))}
-            </ul>
+              <ul className="category-panel-list">
+                {resources.slice(0, 4).map((resource) => (
+                  <li key={resource.slug}>
+                    <Link to={`/resource/${resource.slug}`}>{resource.title}</Link>
+                    <p>{resource.description}</p>
+                  </li>
+                ))}
+              </ul>
 
-            <Link
-              className="inline-link"
-              to={`/catalog?category=${encodeURIComponent(category)}`}
-            >
-              Explore {category.toLowerCase()} resources
-            </Link>
-          </article>
-        ))}
+              <Link
+                className="inline-link"
+                to={`/catalog?category=${encodeURIComponent(category)}`}
+              >
+                Explore {category.toLowerCase()} resources
+              </Link>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
   )
